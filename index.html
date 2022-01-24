@@ -1,113 +1,72 @@
-<div class="scrollable">
-    <div class="form-group"><label for="departements" class="control-label">Département</label> <select
-            name="departements" id="departements" onchange="selectionnerDepartement()" class="form-control">
-        <option style="display: none;"></option>
-        <option value="01">01 - Ain</option>
-        <option value="02">02 - Aisne</option>
-        <option value="03">03 - Allier</option>
-        <option value="04">04 - Alpes-de-Haute-Provence</option>
-        <option value="05">05 - Hautes-Alpes</option>
-        <option value="06">06 - Alpes-Maritimes</option>
-        <option value="07">07 - Ardèche</option>
-        <option value="08">08 - Ardennes</option>
-        <option value="09">09 - Ariège</option>
-        <option value="10">10 - Aube</option>
-        <option value="11">11 - Aude</option>
-        <option value="12">12 - Aveyron</option>
-        <option value="13">13 - Bouches-du-Rhône</option>
-        <option value="14">14 - Calvados</option>
-        <option value="15">15 - Cantal</option>
-        <option value="16">16 - Charente</option>
-        <option value="17">17 - Charente-Maritime</option>
-        <option value="18">18 - Cher</option>
-        <option value="19">19 - Corrèze</option>
-        <option value="21">21 - Côte-d'Or</option>
-        <option value="22">22 - Côtes-d'Armor</option>
-        <option value="23">23 - Creuse</option>
-        <option value="24">24 - Dordogne</option>
-        <option value="25">25 - Doubs</option>
-        <option value="26">26 - Drôme</option>
-        <option value="27">27 - Eure</option>
-        <option value="28">28 - Eure-et-Loir</option>
-        <option value="29">29 - Finistère</option>
-        <option value="2A">2A - Corse-du-Sud</option>
-        <option value="2B">2B - Haute-Corse</option>
-        <option value="30">30 - Gard</option>
-        <option value="31">31 - Haute-Garonne</option>
-        <option value="32">32 - Gers</option>
-        <option value="33">33 - Gironde</option>
-        <option value="34">34 - Hérault</option>
-        <option value="35">35 - Ille-et-Vilaine</option>
-        <option value="36">36 - Indre</option>
-        <option value="37">37 - Indre-et-Loire</option>
-        <option value="38">38 - Isère</option>
-        <option value="39">39 - Jura</option>
-        <option value="40">40 - Landes</option>
-        <option value="41">41 - Loir-et-Cher</option>
-        <option value="42">42 - Loire</option>
-        <option value="43">43 - Haute-Loire</option>
-        <option value="44">44 - Loire-Atlantique</option>
-        <option value="45">45 - Loiret</option>
-        <option value="46">46 - Lot</option>
-        <option value="47">47 - Lot-et-Garonne</option>
-        <option value="48">48 - Lozère</option>
-        <option value="49">49 - Maine-et-Loire</option>
-        <option value="50">50 - Manche</option>
-        <option value="51">51 - Marne</option>
-        <option value="52">52 - Haute-Marne</option>
-        <option value="53">53 - Mayenne</option>
-        <option value="54">54 - Meurthe-et-Moselle</option>
-        <option value="55">55 - Meuse</option>
-        <option value="56">56 - Morbihan</option>
-        <option value="57">57 - Moselle</option>
-        <option value="58">58 - Nièvre</option>
-        <option value="59">59 - Nord</option>
-        <option value="60">60 - Oise</option>
-        <option value="61">61 - Orne</option>
-        <option value="62">62 - Pas-de-Calais</option>
-        <option value="63">63 - Puy-de-Dôme</option>
-        <option value="64">64 - Pyrénées-Atlantiques</option>
-        <option value="65">65 - Hautes-Pyrénées</option>
-        <option value="66">66 - Pyrénées-Orientales</option>
-        <option value="67">67 - Bas-Rhin</option>
-        <option value="68">68 - Haut-Rhin</option>
-        <option value="69">69 - Rhône</option>
-        <option value="70">70 - Haute-Saône</option>
-        <option value="71">71 - Saône-et-Loire</option>
-        <option value="72">72 - Sarthe</option>
-        <option value="73">73 - Savoie</option>
-        <option value="74">74 - Haute-Savoie</option>
-        <option value="75">75 - Paris</option>
-        <option value="76">76 - Seine-Maritime</option>
-        <option value="77">77 - Seine-et-Marne</option>
-        <option value="78">78 - Yvelines</option>
-        <option value="79">79 - Deux-Sèvres</option>
-        <option value="80">80 - Somme</option>
-        <option value="81">81 - Tarn</option>
-        <option value="82">82 - Tarn-et-Garonne</option>
-        <option value="83">83 - Var</option>
-        <option value="84">84 - Vaucluse</option>
-        <option value="85">85 - Vendée</option>
-        <option value="86">86 - Vienne</option>
-        <option value="87">87 - Haute-Vienne</option>
-        <option value="88">88 - Vosges</option>
-        <option value="89">89 - Yonne</option>
-        <option value="90">90 - Territoire de Belfort</option>
-        <option value="91">91 - Essonne</option>
-        <option value="92">92 - Hauts-de-Seine</option>
-        <option value="93">93 - Seine-Saint-Denis</option>
-        <option value="94">94 - Val-de-Marne</option>
-        <option value="95">95 - Val-d'Oise</option>
-        <option value="971">971 - Guadeloupe</option>
-        <option value="972">972 - Martinique</option>
-        <option value="973">973 - Guyane</option>
-        <option value="974">974 - La Réunion</option>
-        <option value="976">976 - Mayotte</option>
-    </select></div>
-    <div class="form-group"><label for="communes" class="control-label">Commune</label> <select name="communes"
-                                                                                                id="communes"
-                                                                                                onchange="selectionnerCommune()"
-                                                                                                class="form-control">
-        <option style="display: none;"></option>
-    </select></div>
-</div>
+<html><head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>DVF</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script type="text/javascript" async="" defer="" src="//stats.data.gouv.fr/piwik.js"></script><script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=default%2Ces2015%2Ces2016%2Ces2017%2Cfetch%2CPromise"></script>
+	<link rel="stylesheet" href="/css/app.css">
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.min.js"></script>
+	<script src="https://unpkg.com/mapbox-gl@0.54.0/dist/mapbox-gl.js"></script>
+	<link href="https://unpkg.com/mapbox-gl@0.54.0/dist/mapbox-gl.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/@turf/turf@5/turf.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	<script type="text/javascript" src="https://unpkg.com/lodash@4.17.11/lodash.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.png">
+	<style type="text/css">
+		html, body {
+			height: 100vh;
+			overflow-y: hidden;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="topnav">
+		<div class="topnav-left">
+			<div class="title">
+				<a class="full-title" href="/">Demande de Valeur Foncière</a>
+				<a class="short-title" href="/">DVF</a>
+			</div>
+			<div class="hamburger" onclick="toggleLeftBar()">
+				<i class="fas fa-bars fa-1x"></i>
+			</div>
+		</div>
+		<div class="topnav-right">
+			<a href="faq.html">Questions</a>
+			<a href="https://github.com/etalab/DVF-app">
+				Code<span class="long-text"> source</span>
+			</a>
+			<!--<a href="https://framaforms.org/demande-de-valeur-fonciere-dvf-votre-avis-nous-interesse-1556111586">
+				Votre avis<span class="long-text"> nous intéresse</span>
+			</a>-->
+		</div>
+	</div>
+
+	<div id="app" class="wrapper"><div id="sidebar_left" class="sidebar"><div class="scrollable"><div class="form-group"><label for="departements" class="control-label">Département</label> <select name="departements" id="departements" onchange="selectionnerDepartement()" class="form-control"><option style="display: none;"></option><option value="01">01 - Ain</option><option value="02">02 - Aisne</option><option value="03">03 - Allier</option><option value="04">04 - Alpes-de-Haute-Provence</option><option value="05">05 - Hautes-Alpes</option><option value="06">06 - Alpes-Maritimes</option><option value="07">07 - Ardèche</option><option value="08">08 - Ardennes</option><option value="09">09 - Ariège</option><option value="10">10 - Aube</option><option value="11">11 - Aude</option><option value="12">12 - Aveyron</option><option value="13">13 - Bouches-du-Rhône</option><option value="14">14 - Calvados</option><option value="15">15 - Cantal</option><option value="16">16 - Charente</option><option value="17">17 - Charente-Maritime</option><option value="18">18 - Cher</option><option value="19">19 - Corrèze</option><option value="21">21 - Côte-d'Or</option><option value="22">22 - Côtes-d'Armor</option><option value="23">23 - Creuse</option><option value="24">24 - Dordogne</option><option value="25">25 - Doubs</option><option value="26">26 - Drôme</option><option value="27">27 - Eure</option><option value="28">28 - Eure-et-Loir</option><option value="29">29 - Finistère</option><option value="2A">2A - Corse-du-Sud</option><option value="2B">2B - Haute-Corse</option><option value="30">30 - Gard</option><option value="31">31 - Haute-Garonne</option><option value="32">32 - Gers</option><option value="33">33 - Gironde</option><option value="34">34 - Hérault</option><option value="35">35 - Ille-et-Vilaine</option><option value="36">36 - Indre</option><option value="37">37 - Indre-et-Loire</option><option value="38">38 - Isère</option><option value="39">39 - Jura</option><option value="40">40 - Landes</option><option value="41">41 - Loir-et-Cher</option><option value="42">42 - Loire</option><option value="43">43 - Haute-Loire</option><option value="44">44 - Loire-Atlantique</option><option value="45">45 - Loiret</option><option value="46">46 - Lot</option><option value="47">47 - Lot-et-Garonne</option><option value="48">48 - Lozère</option><option value="49">49 - Maine-et-Loire</option><option value="50">50 - Manche</option><option value="51">51 - Marne</option><option value="52">52 - Haute-Marne</option><option value="53">53 - Mayenne</option><option value="54">54 - Meurthe-et-Moselle</option><option value="55">55 - Meuse</option><option value="56">56 - Morbihan</option><option value="57">57 - Moselle</option><option value="58">58 - Nièvre</option><option value="59">59 - Nord</option><option value="60">60 - Oise</option><option value="61">61 - Orne</option><option value="62">62 - Pas-de-Calais</option><option value="63">63 - Puy-de-Dôme</option><option value="64">64 - Pyrénées-Atlantiques</option><option value="65">65 - Hautes-Pyrénées</option><option value="66">66 - Pyrénées-Orientales</option><option value="67">67 - Bas-Rhin</option><option value="68">68 - Haut-Rhin</option><option value="69">69 - Rhône</option><option value="70">70 - Haute-Saône</option><option value="71">71 - Saône-et-Loire</option><option value="72">72 - Sarthe</option><option value="73">73 - Savoie</option><option value="74">74 - Haute-Savoie</option><option value="75">75 - Paris</option><option value="76">76 - Seine-Maritime</option><option value="77">77 - Seine-et-Marne</option><option value="78">78 - Yvelines</option><option value="79">79 - Deux-Sèvres</option><option value="80">80 - Somme</option><option value="81">81 - Tarn</option><option value="82">82 - Tarn-et-Garonne</option><option value="83">83 - Var</option><option value="84">84 - Vaucluse</option><option value="85">85 - Vendée</option><option value="86">86 - Vienne</option><option value="87">87 - Haute-Vienne</option><option value="88">88 - Vosges</option><option value="89">89 - Yonne</option><option value="90">90 - Territoire de Belfort</option><option value="91">91 - Essonne</option><option value="92">92 - Hauts-de-Seine</option><option value="93">93 - Seine-Saint-Denis</option><option value="94">94 - Val-de-Marne</option><option value="95">95 - Val-d'Oise</option><option value="971">971 - Guadeloupe</option><option value="972">972 - Martinique</option><option value="973">973 - Guyane</option><option value="974">974 - La Réunion</option><option value="976">976 - Mayotte</option></select></div> <div class="form-group"><label for="communes" class="control-label">Commune</label> <select name="communes" id="communes" onchange="selectionnerCommune()" class="form-control"><option style="display: none;"></option><option value="01004">Ambérieu-en-Bugey</option><option value="01005">Ambérieux-en-Dombes</option><option value="01006">Ambléon</option><option value="01007">Ambronay</option><option value="01008">Ambutrix</option><option value="01009">Andert-et-Condon</option><option value="01010">Anglefort</option><option value="01011">Apremont</option><option value="01012">Aranc</option><option value="01013">Arandas</option><option value="01014">Arbent</option><option value="01016">Arbigny</option><option value="01015">Arboys en Bugey</option><option value="01017">Argis</option><option value="01019">Armix</option><option value="01021">Ars-sur-Formans</option><option value="01022">Artemare</option><option value="01453">Arvière-en-Valromey</option><option value="01023">Asnières-sur-Saône</option><option value="01024">Attignat</option><option value="01025">Bâgé-Dommartin</option><option value="01026">Bâgé-le-Châtel</option><option value="01027">Balan</option><option value="01028">Baneins</option><option value="01170">Béard-Géovreissiat</option><option value="01029">Beaupont</option><option value="01030">Beauregard</option><option value="01032">Béligneux</option><option value="01034">Belley</option><option value="01035">Belleydoux</option><option value="01031">Bellignat</option><option value="01037">Bénonces</option><option value="01038">Bény</option><option value="01039">Béon</option><option value="01040">Béréziat</option><option value="01041">Bettant</option><option value="01042">Bey</option><option value="01043">Beynost</option><option value="01044">Billiat</option><option value="01045">Birieux</option><option value="01046">Biziat</option><option value="01047">Blyes</option><option value="01245">Bohas-Meyriat-Rignat</option><option value="01050">Boissey</option><option value="01051">Bolozon</option><option value="01052">Bouligneux</option><option value="01053">Bourg-en-Bresse</option><option value="01054">Bourg-Saint-Christophe</option><option value="01056">Boyeux-Saint-Jérôme</option><option value="01057">Boz</option><option value="01058">Brégnier-Cordon</option><option value="01060">Brénod</option><option value="01061">Brens</option><option value="01130">Bresse Vallons</option><option value="01062">Bressolles</option><option value="01063">Brion</option><option value="01064">Briord</option><option value="01065">Buellas</option><option value="01067">Ceignes</option><option value="01068">Cerdon</option><option value="01069">Certines</option><option value="01071">Cessy</option><option value="01072">Ceyzériat</option><option value="01073">Ceyzérieu</option><option value="01074">Chalamont</option><option value="01075">Chaleins</option><option value="01076">Chaley</option><option value="01077">Challes-la-Montagne</option><option value="01078">Challex</option><option value="01079">Champagne-en-Valromey</option><option value="01080">Champdor-Corcelles</option><option value="01081">Champfromier</option><option value="01082">Chanay</option><option value="01083">Chaneins</option><option value="01084">Chanoz-Châtenay</option><option value="01087">Charix</option><option value="01088">Charnoz-sur-Ain</option><option value="01089">Château-Gaillard</option><option value="01090">Châtenay</option><option value="01092">Châtillon-la-Palud</option><option value="01093">Châtillon-sur-Chalaronne</option><option value="01094">Chavannes-sur-Reyssouze</option><option value="01096">Chaveyriat</option><option value="01098">Chazey-Bons</option><option value="01099">Chazey-sur-Ain</option><option value="01100">Cheignieu-la-Balme</option><option value="01101">Chevillard</option><option value="01102">Chevroux</option><option value="01103">Chevry</option><option value="01104">Chézery-Forens</option><option value="01105">Civrieux</option><option value="01106">Cize</option><option value="01107">Cleyzieu</option><option value="01108">Coligny</option><option value="01109">Collonges</option><option value="01110">Colomieu</option><option value="01111">Conand</option><option value="01112">Condamine</option><option value="01113">Condeissiat</option><option value="01114">Confort</option><option value="01115">Confrançon</option><option value="01116">Contrevoz</option><option value="01117">Conzieu</option><option value="01118">Corbonod</option><option value="01121">Corlier</option><option value="01123">Cormoranche-sur-Saône</option><option value="01124">Cormoz</option><option value="01125">Corveissiat</option><option value="01127">Courmangoux</option><option value="01128">Courtes</option><option value="01129">Crans</option><option value="01133">Cressin-Rochefort</option><option value="01134">Crottet</option><option value="01135">Crozet</option><option value="01136">Cruzilles-lès-Mépillat</option><option value="01138">Culoz</option><option value="01139">Curciat-Dongalon</option><option value="01140">Curtafond</option><option value="01141">Cuzieu</option><option value="01142">Dagneux</option><option value="01143">Divonne-les-Bains</option><option value="01146">Dompierre-sur-Chalaronne</option><option value="01145">Dompierre-sur-Veyle</option><option value="01147">Domsure</option><option value="01148">Dortan</option><option value="01149">Douvres</option><option value="01150">Drom</option><option value="01151">Druillat</option><option value="01152">Échallon</option><option value="01153">Échenevex</option><option value="01155">Évosges</option><option value="01156">Faramans</option><option value="01157">Fareins</option><option value="01158">Farges</option><option value="01159">Feillens</option><option value="01160">Ferney-Voltaire</option><option value="01162">Flaxieu</option><option value="01163">Foissiat</option><option value="01165">Francheleins</option><option value="01166">Frans</option><option value="01167">Garnerans</option><option value="01169">Genouilleux</option><option value="01171">Géovreisset</option><option value="01173">Gex</option><option value="01174">Giron</option><option value="01175">Gorrevod</option><option value="01177">Grand-Corent</option><option value="01179">Grièges</option><option value="01180">Grilly</option><option value="01181">Groissiat</option><option value="01338">Groslée-Saint-Benoit</option><option value="01183">Guéreins</option><option value="01187">Haut Valromey</option><option value="01184">Hautecourt-Romanèche</option><option value="01188">Illiat</option><option value="01189">Injoux-Génissiat</option><option value="01190">Innimond</option><option value="01191">Izenave</option><option value="01192">Izernore</option><option value="01193">Izieu</option><option value="01194">Jassans-Riottier</option><option value="01195">Jasseron</option><option value="01196">Jayat</option><option value="01197">Journans</option><option value="01198">Joyeux</option><option value="01199">Jujurieux</option><option value="01001">L'Abergement-Clémenciat</option><option value="01002">L'Abergement-de-Varey</option><option value="01049">La Boisse</option><option value="01066">La Burbanche</option><option value="01085">La Chapelle-du-Châtelard</option><option value="01425">La Tranclière</option><option value="01200">Labalme</option><option value="01202">Lagnieu</option><option value="01203">Laiz</option><option value="01206">Lantenay</option><option value="01207">Lapeyrouse</option><option value="01208">Lavours</option><option value="01260">Le Montellier</option><option value="01299">Le Plantay</option><option value="01204">Le Poizat-Lalleyriat</option><option value="01209">Léaz</option><option value="01210">Lélex</option><option value="01211">Lent</option><option value="01274">Les Neyrolles</option><option value="01212">Lescheroux</option><option value="01213">Leyment</option><option value="01214">Leyssard</option><option value="01216">Lhuis</option><option value="01219">Lompnas</option><option value="01224">Loyettes</option><option value="01225">Lurcy</option><option value="01227">Magnieu</option><option value="01228">Maillat</option><option value="01229">Malafretaz</option><option value="01230">Mantenay-Montlin</option><option value="01231">Manziat</option><option value="01232">Marboz</option><option value="01233">Marchamp</option><option value="01234">Marignieu</option><option value="01235">Marlieux</option><option value="01236">Marsonnas</option><option value="01237">Martignat</option><option value="01238">Massieux</option><option value="01239">Massignieu-de-Rives</option><option value="01240">Matafelon-Granges</option><option value="01241">Meillonnas</option><option value="01242">Mérignat</option><option value="01243">Messimy-sur-Saône</option><option value="01244">Meximieux</option><option value="01246">Mézériat</option><option value="01247">Mijoux</option><option value="01248">Mionnay</option><option value="01249">Miribel</option><option value="01250">Misérieux</option><option value="01252">Mogneneins</option><option value="01254">Montagnat</option><option value="01255">Montagnieu</option><option value="01257">Montanges</option><option value="01258">Montceaux</option><option value="01259">Montcet</option><option value="01261">Monthieux</option><option value="01262">Montluel</option><option value="01263">Montmerle-sur-Saône</option><option value="01264">Montracol</option><option value="01265">Montréal-la-Cluse</option><option value="01266">Montrevel-en-Bresse</option><option value="01268">Murs-et-Gélignieux</option><option value="01269">Nantua</option><option value="01272">Neuville-les-Dames</option><option value="01273">Neuville-sur-Ain</option><option value="01275">Neyron</option><option value="01276">Niévroz</option><option value="01095">Nivigne et Suran</option><option value="01277">Nivollet-Montgriffon</option><option value="01267">Nurieux-Volognat</option><option value="01279">Oncieu</option><option value="01280">Ordonnaz</option><option value="01281">Ornex</option><option value="01282">Outriaz</option><option value="01283">Oyonnax</option><option value="01284">Ozan</option><option value="01285">Parcieux</option><option value="01286">Parves et Nattages</option><option value="01288">Péron</option><option value="01289">Péronnas</option><option value="01290">Pérouges</option><option value="01291">Perrex</option><option value="01293">Peyriat</option><option value="01294">Peyrieu</option><option value="01295">Peyzieux-sur-Saône</option><option value="01296">Pirajoux</option><option value="01297">Pizay</option><option value="01298">Plagne</option><option value="01185">Plateau d’Hauteville</option><option value="01301">Polliat</option><option value="01302">Pollieu</option><option value="01303">Poncin</option><option value="01304">Pont-d'Ain</option><option value="01305">Pont-de-Vaux</option><option value="01306">Pont-de-Veyle</option><option value="01307">Port</option><option value="01308">Pougny</option><option value="01309">Pouillat</option><option value="01310">Prémeyzel</option><option value="01311">Prémillieu</option><option value="01313">Prévessin-Moëns</option><option value="01314">Priay</option><option value="01317">Ramasse</option><option value="01318">Rancé</option><option value="01319">Relevant</option><option value="01320">Replonges</option><option value="01321">Revonnas</option><option value="01322">Reyrieux</option><option value="01323">Reyssouze</option><option value="01325">Rignieux-le-Franc</option><option value="01328">Romans</option><option value="01329">Rossillon</option><option value="01330">Ruffieu</option><option value="01331">Saint-Alban</option><option value="01334">Saint-André-d'Huiriat</option><option value="01332">Saint-André-de-Bâgé</option><option value="01333">Saint-André-de-Corcy</option><option value="01335">Saint-André-le-Bouchoux</option><option value="01336">Saint-André-sur-Vieux-Jonc</option><option value="01337">Saint-Bénigne</option><option value="01339">Saint-Bernard</option><option value="01343">Saint-Cyr-sur-Menthon</option><option value="01345">Saint-Denis-en-Bugey</option><option value="01344">Saint-Denis-lès-Bourg</option><option value="01346">Saint-Didier-d'Aussiat</option><option value="01347">Saint-Didier-de-Formans</option><option value="01348">Saint-Didier-sur-Chalaronne</option><option value="01349">Saint-Éloi</option><option value="01350">Saint-Étienne-du-Bois</option><option value="01351">Saint-Étienne-sur-Chalaronne</option><option value="01352">Saint-Étienne-sur-Reyssouze</option><option value="01354">Saint-Genis-Pouilly</option><option value="01355">Saint-Genis-sur-Menthon</option><option value="01356">Saint-Georges-sur-Renon</option><option value="01357">Saint-Germain-de-Joux</option><option value="01358">Saint-Germain-les-Paroisses</option><option value="01359">Saint-Germain-sur-Renon</option><option value="01360">Saint-Jean-de-Gonville</option><option value="01361">Saint-Jean-de-Niost</option><option value="01362">Saint-Jean-de-Thurigneux</option><option value="01363">Saint-Jean-le-Vieux</option><option value="01364">Saint-Jean-sur-Reyssouze</option><option value="01365">Saint-Jean-sur-Veyle</option><option value="01367">Saint-Julien-sur-Reyssouze</option><option value="01368">Saint-Julien-sur-Veyle</option><option value="01369">Saint-Just</option><option value="01370">Saint-Laurent-sur-Saône</option><option value="01371">Saint-Marcel</option><option value="01372">Saint-Martin-de-Bavel</option><option value="01373">Saint-Martin-du-Frêne</option><option value="01374">Saint-Martin-du-Mont</option><option value="01375">Saint-Martin-le-Châtel</option><option value="01376">Saint-Maurice-de-Beynost</option><option value="01378">Saint-Maurice-de-Gourdans</option><option value="01379">Saint-Maurice-de-Rémens</option><option value="01380">Saint-Nizier-le-Bouchoux</option><option value="01381">Saint-Nizier-le-Désert</option><option value="01383">Saint-Paul-de-Varax</option><option value="01384">Saint-Rambert-en-Bugey</option><option value="01385">Saint-Rémy</option><option value="01386">Saint-Sorlin-en-Bugey</option><option value="01387">Saint-Sulpice</option><option value="01388">Saint-Trivier-de-Courtes</option><option value="01389">Saint-Trivier-sur-Moignans</option><option value="01390">Saint-Vulbas</option><option value="01342">Sainte-Croix</option><option value="01353">Sainte-Euphémie</option><option value="01366">Sainte-Julie</option><option value="01382">Sainte-Olive</option><option value="01391">Salavre</option><option value="01392">Samognat</option><option value="01393">Sandrans</option><option value="01396">Sault-Brénaz</option><option value="01397">Sauverny</option><option value="01398">Savigneux</option><option value="01399">Ségny</option><option value="01400">Seillonnaz</option><option value="01401">Sergy</option><option value="01402">Sermoyer</option><option value="01403">Serrières-de-Briord</option><option value="01404">Serrières-sur-Ain</option><option value="01405">Servas</option><option value="01406">Servignat</option><option value="01407">Seyssel</option><option value="01408">Simandre-sur-Suran</option><option value="01410">Sonthonnax-la-Montagne</option><option value="01411">Souclin</option><option value="01412">Sulignat</option><option value="01215">Surjoux-Lhopital</option><option value="01415">Talissieu</option><option value="01416">Tenay</option><option value="01418">Thil</option><option value="01419">Thoiry</option><option value="01420">Thoissey</option><option value="01421">Torcieu</option><option value="01422">Tossiat</option><option value="01423">Toussieux</option><option value="01424">Tramoyes</option><option value="01427">Trévoux</option><option value="01426">Val-Revermont</option><option value="01428">Valeins</option><option value="01036">Valromey-sur-Séran</option><option value="01033">Valserhône</option><option value="01429">Vandeins</option><option value="01430">Varambon</option><option value="01431">Vaux-en-Bugey</option><option value="01432">Verjon</option><option value="01433">Vernoux</option><option value="01434">Versailleux</option><option value="01435">Versonnex</option><option value="01436">Vesancy</option><option value="01437">Vescours</option><option value="01439">Vésines</option><option value="01441">Vieu-d'Izenave</option><option value="01443">Villars-les-Dombes</option><option value="01444">Villebois</option><option value="01445">Villemotier</option><option value="01446">Villeneuve</option><option value="01447">Villereversure</option><option value="01448">Villes</option><option value="01449">Villette-sur-Ain</option><option value="01450">Villieu-Loyes-Mollon</option><option value="01451">Viriat</option><option value="01452">Virieu-le-Grand</option><option value="01454">Virignin</option><option value="01456">Vongnes</option><option value="01457">Vonnas</option></select></div> <div class="form-group"><label for="sections" class="control-label">Section cadastrale</label> <select name="sections" id="sections" onchange="selectionnerSection()" class="form-control"><option style="display: none;"></option><option value="01004000AB">AB</option><option value="01004000AC">AC</option><option value="01004000AD">AD</option><option value="01004000AE">AE</option><option value="01004000AH">AH</option><option value="01004000AI">AI</option><option value="01004000AK">AK</option><option value="01004000AL">AL</option><option value="01004000AM">AM</option><option value="01004000AN">AN</option><option value="01004000AO">AO</option><option value="01004000AP">AP</option><option value="01004000AR">AR</option><option value="01004000AS">AS</option><option value="01004000AT">AT</option><option value="01004000AV">AV</option><option value="01004000AW">AW</option><option value="01004000AX">AX</option><option value="01004000AY">AY</option><option value="01004000AZ">AZ</option><option value="010040000B">B</option><option value="01004000BC">BC</option><option value="01004000BD">BD</option><option value="01004000BE">BE</option><option value="01004000BH">BH</option><option value="01004000BI">BI</option><option value="01004000BK">BK</option><option value="01004000BL">BL</option><option value="01004000BM">BM</option><option value="01004000BN">BN</option><option value="01004000BO">BO</option><option value="01004000BP">BP</option><option value="01004000BR">BR</option><option value="01004000BS">BS</option><option value="01004000BT">BT</option><option value="010040000C">C</option><option value="010040000D">D</option><option value="010040000E">E</option><option value="010040000F">F</option></select></div> <div class="form-group"><label for="parcelles" class="control-label">Parcelle cadastrale</label> <select name="parcelles" id="parcelles" onchange="selectionnerParcelle()" class="form-control"><option style="display: none;"></option></select></div> <div class="form-group"><label for="daterange" class="control-label">Date de la mutation</label> <input type="text" id="daterange" name="daterange" value="01-01-2010 - 15-01-2018" class="form-control"></div></div> <!----> <div id="logo"><a href="https://www.etalab.gouv.fr/qui-sommes-nous"><img src="/images/etalab-blanc.png" alt="Etalab" style="max-width: 100px;"></a></div></div> <div id="content"><div id="mapid" class="mapboxgl-map"><div onclick="changeMapStyle()" class="switch-map-style"><img src="/images/preview-ortho.png" alt="Fond orthophoto"> <!----></div><div class="mapboxgl-canary" style="visibility: hidden;"></div><div class="mapboxgl-canvas-container mapboxgl-interactive mapboxgl-touch-drag-pan mapboxgl-touch-zoom-rotate"><canvas class="mapboxgl-canvas" tabindex="0" aria-label="Map" width="1030" height="89" style="position: absolute; width: 1030px; height: 89px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"></div><div class="mapboxgl-ctrl-top-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-group"><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in" type="button" title="Zoom in" aria-label="Zoom in"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out" type="button" title="Zoom out" aria-label="Zoom out"></button></div></div><div class="mapboxgl-ctrl-bottom-left"><div class="mapboxgl-ctrl" style="display: none;"><a class="mapboxgl-ctrl-logo" target="_blank" rel="noopener" href="https://www.mapbox.com/" aria-label="Mapbox logo"></a></div></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl mapboxgl-ctrl-attrib"><div class="mapboxgl-ctrl-attrib-inner"><a href="https://www.etalab.gouv.fr/" target="_blank">© Etalab</a> <a href="https://www.openmaptiles.org/" target="_blank">© OpenMapTiles</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© Contributeurs OpenStreetMap</a></div></div></div></div></div></div> <!----></div>
+
+	<!-- Matomo -->
+	<script type="text/javascript">
+		var _paq = _paq || [];
+		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		(function () {
+			var u = "//stats.data.gouv.fr/";
+			_paq.push(['setTrackerUrl', u + 'piwik.php']);
+			_paq.push(['setSiteId', '76']);
+			var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+			g.type = 'text/javascript'; g.async = true; g.defer = true; g.src = u + 'piwik.js'; s.parentNode.insertBefore(g, s);
+		})();
+	</script>
+	<script src="static/js/data.js"></script>
+	<script src="static/js/index.js"></script><div class="daterangepicker ltr show-calendar opensleft"><div class="ranges"></div><div class="drp-calendar left"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-calendar right"><div class="calendar-table"></div><div class="calendar-time" style="display: none;"></div></div><div class="drp-buttons"><span class="drp-selected"></span><button class="cancelBtn btn btn-sm btn-default" type="button">Annuler</button><button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Valider</button> </div></div>
+
+
+
+
+</body></html>
