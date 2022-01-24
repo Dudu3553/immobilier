@@ -559,7 +559,7 @@ function toggleLeftBar() {
 	map.on('load', function() {
 		if (!departements) {
 			// Chargement des contours des départements
-			$.getJSON("/donneesgeo/departements-100m.geojson",
+			$.getJSON("../static/data/donneesgeo/departements-100m.geojson",
 				function (data) {
 					departements = data
 				}
