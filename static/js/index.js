@@ -581,10 +581,10 @@ function getDataCommune(){
     df = new dfd.DataFrame(baseConso)
 
 
-    df.groupby(["id_parcelle"]).col(["surface_terrain"]).mean()
-    df.groupby(["id_parcelle"]).col(["surface_terrain"]).mean()
+    df.groupby(["id_parcelle"]).col(["surface_terrain"]).mean().print()
+    df.groupby(["id_parcelle"]).col(["surface_terrain"]).mean().print()
 
-    id_parcelle
+
 /* df.groupby(["annee"]).col(["valeur_fonciere"]).mean().print() */
 /* df.drop({columns: 'surface_terrain',axis:1}) */
 
