@@ -40,7 +40,7 @@ function getCommunes(codeDepartement) {
 }
 
 function getMutations(codeCommune, idSection, startDate, endDate) {
-	return getRemoteJSON(`/api/mutations3/${codeCommune}/${idSectionToCode(idSection)}`)
+	return getRemoteJSON(`https://app.dvf.etalab.gouv.fr/api/mutations3/${codeCommune}/${idSectionToCode(idSection)}`)
 		.then(function (data) {
 			return data.mutations.filter(function (m) {
 				return m.date_mutation >= startDate && m.date_mutation <= endDate && m.id_parcelle.startsWith(idSection)
@@ -48,11 +48,14 @@ function getMutations(codeCommune, idSection, startDate, endDate) {
 		})
 }
 
-var communesMappingPromise = getRemoteJSON('static/data/donneesgeo/communes-mapping.json', true)
+
+
+var communesMappingPromise = getRemoteJSON('https://kevin.dumast.gitlab.io/immobilier/static/data/donneesgeo/communes-mapping.json', true)
 
 function getCadastreLayer(layerName, codeCommune) {
 	return communesMappingPromise.then(function (communesMapping) {
 		var communesToGet = codeCommune in communesMapping ? communesMapping[codeCommune] : [codeCommune]
+
 		console.log('communesToGet : ' + communesToGet)
 		return Promise.all(communesToGet.map(function (communeToGet) {
 			return getRemoteJSON(`https://cadastre.data.gouv.fr/bundler/cadastre-etalab/communes/${communeToGet}/geojson/${layerName}`)
@@ -167,4 +170,11 @@ function computeParcelle(mutationsSection, idParcelle) {
 
 	return {mutations: sortByDateDesc(mutations)}
 }
+
+
+
+
+
+
+
 

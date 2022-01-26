@@ -18,7 +18,8 @@
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 	<script type="text/javascript" src="https://unpkg.com/lodash@4.17.11/lodash.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
-	<style type="text/css">
+	<script src="https://cdn.jsdelivr.net/npm/danfojs@1.0.2/lib/bundle.min.js"></script>
+    <style type="text/css">
 		html, body {
 			height: 100vh;
 			overflow-y: hidden;
@@ -599,13 +600,7 @@
                 <option value="010040000E">E</option>
                 <option value="010040000F">F</option>
             </select></div>
-            <div class="form-group"><label for="parcelles" class="control-label">Parcelle cadastrale</label> <select
-                    name="parcelles" id="parcelles" onchange="selectionnerParcelle()" class="form-control">
-                <option style="display: none;"></option>
-            </select></div>
-            <div class="form-group"><label for="daterange" class="control-label">Date de la mutation</label> <input
-                    type="text" id="daterange" name="daterange" value="01-01-2010 - 15-01-2018" class="form-control">
-            </div>
+
         </div> <!---->
     </div>
     <div id="content">
@@ -647,21 +642,8 @@
 <!-- Matomo -->
 <script src="static/js/data.js"></script>
 <script src="static/js/index.js"></script>
-<div class="daterangepicker ltr show-calendar opensleft">
-    <div class="ranges"></div>
-    <div class="drp-calendar left">
-        <div class="calendar-table"></div>
-        <div class="calendar-time" style="display: none;"></div>
-    </div>
-    <div class="drp-calendar right">
-        <div class="calendar-table"></div>
-        <div class="calendar-time" style="display: none;"></div>
-    </div>
-    <div class="drp-buttons"><span class="drp-selected"></span>
-        <button class="cancelBtn btn btn-sm btn-default" type="button">Annuler</button>
-        <button class="applyBtn btn btn-sm btn-primary" disabled="disabled" type="button">Valider</button>
-    </div>
-</div>
+
+
 
 
 </body>

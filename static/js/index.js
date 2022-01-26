@@ -20,6 +20,7 @@ vue.$watch('fold_left', function () {
 	map.resize()
 })
 
+
 // Partie JavaScript standard (sans framework) --------------------------------
 
 // Définition des variables globales
@@ -38,6 +39,9 @@ var idSection = null;
 var data_parcelle = null;
 var codeParcelle = null;
 var codesParcelles = null;
+var sections_list = [];
+var baseConso = [];
+var df = null;
 
 var styles = {
 	ortho: {
@@ -348,7 +352,9 @@ function selectionnerCommune() {
 	// L'utilisateur a cliqué sur la liste déroulante des communes
 	var e = document.getElementById("communes");
 	var sonCode = e.options[e.selectedIndex].value;
+	console.log(sonCode)
 	entrerDansCommune(sonCode);
+
 }
 
 function selectionnerSection() {
@@ -472,6 +478,13 @@ function entrerDansSection(newIdSection) {
 	);
 }
 
+
+
+
+
+
+
+
 function entrerDansCommune(newCodeCommune) {
 	if (codeCommune) {
 		resetCommune()
@@ -487,6 +500,15 @@ function entrerDansCommune(newCodeCommune) {
 	return getSections(codeCommune).then(
 		function (data) {
 			sections = data
+			sections_list =[]
+
+
+			sections.features.forEach(element => sections_list.push(element.id));
+
+
+            getDataCommune()
+			console.log(sections_list)
+
 			map.getSource('sections').setData(sections)
 
 			data.features.map(filledSectionsOptions)
@@ -498,6 +520,81 @@ function entrerDansCommune(newCodeCommune) {
 		}
 	);
 }
+
+function classSurface_terrain(x){
+   if (x <= 300){
+      return "1 - [<= 300]"}
+   else if (x <= 500){
+      return "2 - [300 < x <= 500]"}
+   else if (x <= 800){
+      return "3 - [500 < x <= 800]"}
+   else if (x <= 1000){
+      return "4 - [800 < x <= 1000]"}
+   else if (x <= 1500){
+      return "5 - [1000 < x <= 1500]"}
+   else if (x <= 2000){
+       return "6 - [1500 < x <= 2000]"}
+   else if (x <= 3000){
+       return "7 - [2000 < x <= 3000]"}
+   else if (x > 3000){
+       return "8 - [x > 3000 ]"}
+   else{
+      return "noRef"}
+
+}
+
+function classSurface_habitable(x){
+   if (x <= 50){
+      return "1 - [<= 50]"}
+   else if (x <= 80){
+      return "2 - [50 < x <= 80]"}
+   else if (x <= 100){
+      return "3 - [80 < x <= 100]"}
+   else if (x <= 120){
+      return "4 - [100 < x <= 120]"}
+   else if (x <= 150){
+      return "5 - [120 < x <= 150]"}
+   else if (x <= 200){
+       return "6 - [150 < x <= 200]"}
+   else if (x > 200){
+       return "7 - [x > 200]"}
+   else{
+      return "noRef"}
+}
+
+function getDataCommune(){
+
+    sections_list.forEach( idSection =>
+    getMutations(codeCommune, idSection, startDate, endDate).then(function (data) {
+        data.forEach(element => baseConso.push(element))})
+        )
+    baseConso.forEach(element => element['annee'] = element['date_mutation'].substr(0,4))
+    baseConso.forEach(element => element['surface_terrain'] = parseInt(element['surface_terrain']) )
+    baseConso.forEach(element => element['surface_reelle_bati'] = parseInt(element['surface_terrain']) )
+    baseConso.forEach(element => element['valeur_fonciere'] = parseInt(element['valeur_fonciere']) )
+
+
+
+    baseConso.forEach(element => element['surface_terrain_class'] = classSurface_terrain(element['surface_terrain']) )
+    baseConso.forEach(element => element['surface_reelle_bati_class'] = classSurface_habitable(element['surface_reelle_bati']) )
+
+    df = new dfd.DataFrame(baseConso)
+
+
+    df.groupby(["id_parcelle"]).col(["surface_terrain"]).mean()
+    df.groupby(["id_parcelle"]).col(["surface_terrain"]).mean()
+
+    id_parcelle
+/* df.groupby(["annee"]).col(["valeur_fonciere"]).mean().print() */
+/* df.drop({columns: 'surface_terrain',axis:1}) */
+
+
+}
+
+
+
+
+
 
 function entrerDansDepartement(sonCode) {
 	if (codeDepartement) {
@@ -559,7 +656,7 @@ function toggleLeftBar() {
 	map.on('load', function() {
 		if (!departements) {
 			// Chargement des contours des départements
-			$.getJSON("static/data/donneesgeo/departements-100m.geojson",
+			$.getJSON("https://kevin.dumast.gitlab.io/immobilier/static/data/donneesgeo/departements-100m.geojson",
 				function (data) {
 					departements = data
 				}
