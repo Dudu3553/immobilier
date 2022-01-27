@@ -1,6 +1,6 @@
 function getRemoteJSON(url, throwIfNotFound) {
 	return fetch(url).then(function (response) {
-	    console.log(url)
+
 		if (response.ok) {
 			return response.json()
 		}

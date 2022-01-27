@@ -41,6 +41,8 @@ var codeParcelle = null;
 var codesParcelles = null;
 var sections_list = [];
 var baseConso = [];
+
+var DataFrame = dfjs.DataFrame;
 var df = null;
 
 var styles = {
@@ -507,7 +509,9 @@ function entrerDansCommune(newCodeCommune) {
 
 
             getDataCommune()
+
 			console.log(sections_list)
+            baseConso.length = 0;
 
 			map.getSource('sections').setData(sections)
 
@@ -564,27 +568,38 @@ function classSurface_habitable(x){
 
 function getDataCommune(){
 
+
+
     sections_list.forEach( idSection =>
     getMutations(codeCommune, idSection, startDate, endDate).then(function (data) {
         data.forEach(element => baseConso.push(element))})
         )
+
+
     baseConso.forEach(element => element['annee'] = element['date_mutation'].substr(0,4))
     baseConso.forEach(element => element['surface_terrain'] = parseInt(element['surface_terrain']) )
     baseConso.forEach(element => element['surface_reelle_bati'] = parseInt(element['surface_terrain']) )
     baseConso.forEach(element => element['valeur_fonciere'] = parseInt(element['valeur_fonciere']) )
 
-
-
     baseConso.forEach(element => element['surface_terrain_class'] = classSurface_terrain(element['surface_terrain']) )
     baseConso.forEach(element => element['surface_reelle_bati_class'] = classSurface_habitable(element['surface_reelle_bati']) )
 
+
+    df = new  DataFrame(baseConso, Object.keys(baseConso[0]) )
+    df1 = df.dropDuplicates('id_parcelle')
+    df2 = df.groupBy('id_parcelle').aggregate(group => group.stat.sum('surface_terrain')).rename('aggregation', 'surface_terrain');
+dfConso = df1.select('id_parcelle','nature_mutation','type_local','nombre_pieces_principales','surface_reelle_bati','valeur_fonciere').innerJoin(df2, 'id_parcelle')
+dfConso = dfConso.dropMissingValues()
+/*
     df = new dfd.DataFrame(baseConso)
 
+    df.groupby(["id_parcelle"]).col(["surface_terrain"]).sum().print()
 
-    df.groupby(["id_parcelle"]).col(["surface_terrain"]).mean().print()
-    df.groupby(["id_parcelle"]).col(["surface_terrain"]).mean().print()
-
-
+    df = df.groupby(["id_parcelle","nature_mutation","type_local","nombre_pieces_principales","surface_reelle_bati","valeur_fonciere"]).sum()
+*/
+    /* df["id_parcelle","nature_mutation","nombre_pieces_principales","surface_terrain","surface_reelle_bati","valeur_fonciere"].dropDuplicates({keep:"last", subset:"id_parcelle"}).print()
+    df[df['type_local']=='Maison']
+*/
 /* df.groupby(["annee"]).col(["valeur_fonciere"]).mean().print() */
 /* df.drop({columns: 'surface_terrain',axis:1}) */
 
